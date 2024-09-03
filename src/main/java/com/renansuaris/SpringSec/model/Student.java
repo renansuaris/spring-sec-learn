@@ -1,15 +1,19 @@
 package com.renansuaris.SpringSec.model;
 
-public class Student {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
+public class Student {
     private int id;
     private String name;
-    private int age;
+    private int marks;
 
-    public Student(int id, String name, int age) {
+
+    public Student(int id, String name,int marks) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.marks = marks;
     }
 
     public int getId() {
@@ -28,11 +32,21 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getMarks() {
+        return marks;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+
+
+    @Override
+    public String toString() {
+        return "StudentController{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", marks=" + marks +
+                '}';
     }
 }
